@@ -36,8 +36,8 @@ betalink <- function(n1,n2,bf=B01){
       beta_OS <- bf(betapart(se1, se2))
       beta_ST <- beta_WN - beta_OS
    } else {
-      beta_OS <- NaN
-      beta_ST <- NaN
+      beta_OS <-  0  # No overlap of interactions
+     beta_ST <- 1  # Entire dissimilarity is turnover
    }
 	return(list(S = beta_S, OS = beta_OS, WN = beta_WN, ST = beta_ST))
 }
